@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "LoadExcel";
+}
+
+<h2>Load Excel</h2>
+
+@using (Html.BeginForm("LoadExcel", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.Label("Excel: ", null, new { @class = "col-sm-2 control-label" })
+        <div class="col-lg-10">
+            <input type="file" name="fileExcel" class="btn btn-default" />
+            <input type="submit" value="Gravar Excel" class="btn btn-success" style="margin-top:15px;" />
+            <label style="color:#ff0000;">@ViewBag.Erro</label>
+            <label style="color:#017600;">@ViewBag.Sucesso</label>
+        </div>
+    </div>
+
+}

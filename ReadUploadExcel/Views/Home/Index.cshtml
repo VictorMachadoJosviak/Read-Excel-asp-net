@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Index";
+
+    List<ReadUploadExcel.Models.Pessoa> pessoas = ViewBag.lista;
+}
+
+<h2>Index</h2>
+
+<a href="@Url.Action("LoadExcel","Home")" class="btn btn-primary">Carregar Excel</a>
+
+<table class="table table-hover table-responsive" style="margin-top:25px">
+    <thead>
+        <tr style="background-color:#faffbf;">
+            <th>Nome</th>
+            <th>Sobrenome</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in pessoas)
+        {
+            <tr>
+                <td>@Html.Label(item.Nome.ToString())</td>
+                <td>@Html.Label(item.Sobrenome.ToString())</td>
+                <td>@Html.Label(item.Email.ToString())</td>
+            </tr>
+        }
+    </tbody>
+</table>
